@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "argdecode"
+version = "1.1.0"
+description = "多层编码 / 古典密码自动破解工具（CLI + 本地 Web GUI）"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "argdecode contributors" }]
+keywords = ["ctf", "cipher", "decoder", "caesar", "vigenere", "base64", "cryptanalysis"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Security :: Cryptography",
+  "Environment :: Console",
+]
+dependencies = []
+
+[project.optional-dependencies]
+# 可选：更准的词频评分
+full = ["wordfreq>=3.0"]
+
+[project.scripts]
+argdecode = "argdecode:main"
+argdecode-gui = "argdecode_gui:main"
+
+[tool.setuptools]
+py-modules = ["argdecode", "argdecode_gui"]
